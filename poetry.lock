@@ -1,8 +1,8 @@
 [[package]]
 name = "anyio"
-version = "3.0.1"
+version = "3.1.0"
 description = "High level compatibility layer for multiple asynchronous event loop implementations"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6.2"
 
@@ -12,14 +12,14 @@ sniffio = ">=1.1"
 
 [package.extras]
 doc = ["sphinx-rtd-theme", "sphinx-autodoc-typehints (>=1.2.0)"]
-test = ["coverage[toml] (>=4.5)", "hypothesis (>=4.0)", "pytest (>=6.0)", "trustme", "uvloop (<0.15)", "uvloop (>=0.15)"]
+test = ["coverage[toml] (>=4.5)", "hypothesis (>=4.0)", "pytest (>=6.0)", "pytest-mock (>=3.6.1)", "trustme", "uvloop (<0.15)", "mock (>=4)", "uvloop (>=0.15)"]
 trio = ["trio (>=0.16)"]
 
 [[package]]
 name = "appdirs"
 version = "1.4.4"
 description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -91,7 +91,7 @@ test = ["pytest (>=3.9)"]
 name = "babel"
 version = "2.9.1"
 description = "Internationalization utilities"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
@@ -110,7 +110,7 @@ python-versions = "*"
 name = "black"
 version = "21.5b1"
 description = "The uncompromising code formatter."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6.2"
 
@@ -202,7 +202,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "click"
-version = "8.0.0"
+version = "8.0.1"
 description = "Composable command line interface toolkit"
 category = "main"
 optional = false
@@ -229,50 +229,6 @@ python-versions = ">=3.6"
 
 [package.extras]
 extras = ["arrow", "cloudpickle", "enum34", "lz4", "numpy", "ruamel.yaml"]
-
-[[package]]
-name = "cppyy"
-version = "2.0.0"
-description = "Cling-based Python-C++ bindings"
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-cppyy-backend = "1.14.5"
-cppyy-cling = "6.25.0"
-CPyCppyy = "1.12.6"
-
-[[package]]
-name = "cppyy-backend"
-version = "1.14.5"
-description = "C/C++ wrapper for Cling"
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-cppyy-cling = ">=6.25.0"
-
-[[package]]
-name = "cppyy-cling"
-version = "6.25.0"
-description = "Re-packaged Cling, as backend for cppyy"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
-name = "cpycppyy"
-version = "1.12.6"
-description = "Cling-based Python-C++ bindings for CPython"
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-cppyy-backend = ">=1.14.5"
-cppyy-cling = ">=6.25.0"
 
 [[package]]
 name = "cycler"
@@ -302,31 +258,12 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
-name = "docstring-to-markdown"
-version = "0.9"
-description = "On the fly conversion of Python docstrings to markdown"
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[[package]]
 name = "entrypoints"
 version = "0.3"
 description = "Discover and load entry points from installed packages."
 category = "main"
 optional = false
 python-versions = ">=2.7"
-
-[[package]]
-name = "fastjsonschema"
-version = "2.15.1"
-description = "Fastest Python implementation of JSON schema"
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.extras]
-devel = ["colorama", "jsonschema", "json-spec", "pylint", "pytest", "pytest-benchmark", "pytest-cache", "validictory"]
 
 [[package]]
 name = "hist"
@@ -512,7 +449,7 @@ test = ["pytest (>=3.6.0)", "pytest-cov", "mock"]
 name = "isort"
 version = "5.8.0"
 description = "A Python utility / library to sort Python imports."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6,<4.0"
 
@@ -523,18 +460,18 @@ colors = ["colorama (>=0.4.3,<0.5.0)"]
 
 [[package]]
 name = "jedi"
-version = "0.17.2"
+version = "0.18.0"
 description = "An autocompletion tool for Python that can be used for text editors."
 category = "main"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+python-versions = ">=3.6"
 
 [package.dependencies]
-parso = ">=0.7.0,<0.8.0"
+parso = ">=0.8.0,<0.9.0"
 
 [package.extras]
-qa = ["flake8 (==3.7.9)"]
-testing = ["Django (<3.1)", "colorama", "docopt", "pytest (>=3.9.0,<5.0.0)"]
+qa = ["flake8 (==3.8.3)", "mypy (==0.782)"]
+testing = ["Django (<3.1)", "colorama", "docopt", "pytest (<6.0.0)"]
 
 [[package]]
 name = "jinja2"
@@ -551,22 +488,10 @@ MarkupSafe = ">=2.0"
 i18n = ["Babel (>=2.7)"]
 
 [[package]]
-name = "jlab-enhanced-cell-toolbar"
-version = "3.3.0"
-description = "A cell toolbar for JupyterLab."
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-jupyterlab = ">=3.0.0,<4.0.0"
-packaging = "*"
-
-[[package]]
 name = "json5"
 version = "0.9.5"
 description = "A Python implementation of the JSON5 data format."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -623,22 +548,10 @@ pywin32 = {version = ">=1.0", markers = "sys_platform == \"win32\""}
 traitlets = "*"
 
 [[package]]
-name = "jupyter-lsp"
-version = "1.2.0"
-description = "Multi-Language Server WebSocket proxy for Jupyter Notebook/Lab server"
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-entrypoints = "*"
-jupyter-server = ">=1.1.2"
-
-[[package]]
 name = "jupyter-server"
 version = "1.7.0"
 description = "The backend—i.e. core services, APIs, and REST endpoints—to Jupyter web applications."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -666,7 +579,7 @@ test = ["coverage", "pytest", "pytest-cov", "pytest-mock", "requests", "pytest-t
 name = "jupyterlab"
 version = "3.0.16"
 description = "JupyterLab computational environment"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -687,7 +600,7 @@ test = ["coverage", "pytest (>=6.0)", "pytest-cov", "pytest-console-scripts", "p
 name = "jupyterlab-code-formatter"
 version = "1.4.10"
 description = "Code formatter for JupyterLab"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -695,22 +608,10 @@ python-versions = ">=3.6"
 jupyterlab = ">=3.0,<4.0"
 
 [[package]]
-name = "jupyterlab-lsp"
-version = "3.6.0"
-description = "Coding assistance for JupyterLab with Language Server Protocol"
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-jupyter-lsp = ">=1.1.0"
-jupyterlab = ">=3.0.0,<4.0.0a0"
-
-[[package]]
 name = "jupyterlab-markup"
 version = "1.0.0"
 description = "Extensible markdown rendering support in markdown"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -732,7 +633,7 @@ pygments = ">=2.4.1,<3"
 name = "jupyterlab-server"
 version = "2.5.2"
 description = "A set of server components for JupyterLab and JupyterLab like applications ."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -763,39 +664,6 @@ description = "A fast implementation of the Cassowary constraint solver"
 category = "main"
 optional = false
 python-versions = ">=3.6"
-
-[[package]]
-name = "line-profiler"
-version = "3.2.6"
-description = "Line-by-line profiler."
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-IPython = {version = ">=0.13", markers = "python_version >= \"3.7\""}
-
-[package.extras]
-all = ["cython", "scikit-build", "cmake", "ninja", "pytest (>=4.6.11)", "pytest-cov (>=2.10.1)", "coverage[toml] (>=5.3)", "ubelt (>=0.8.7)", "IPython (>=0.13,<=7.7.0)", "IPython (>=0.13)"]
-build = ["cython", "scikit-build", "cmake", "ninja"]
-tests = ["pytest (>=4.6.11)", "pytest-cov (>=2.10.1)", "coverage[toml] (>=5.3)", "ubelt (>=0.8.7)"]
-
-[[package]]
-name = "literary"
-version = "2.0.1"
-description = "Literate package development with Jupyter"
-category = "dev"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-ipython = "*"
-jupyter-core = ">=4.7,<4.8"
-nbclient = ">=0.5,<0.6"
-nbconvert = ">=6,<7"
-nbformat = {version = ">=4,<6", extras = ["fast"]}
-traitlets = ">=5,<6"
-typing-extensions = "*"
 
 [[package]]
 name = "llvmlite"
@@ -896,7 +764,7 @@ test = ["pytest (>=4.6)"]
 name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -904,7 +772,7 @@ python-versions = "*"
 name = "nbclassic"
 version = "0.2.8"
 description = "Jupyter Notebook as a Jupyter Server Extension."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -974,7 +842,6 @@ optional = false
 python-versions = ">=3.5"
 
 [package.dependencies]
-fastjsonschema = {version = "*", optional = true, markers = "extra == \"fast\""}
 ipython-genutils = "*"
 jsonschema = ">=2.4,<2.5.0 || >2.5.0"
 jupyter-core = "*"
@@ -1078,20 +945,21 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "parso"
-version = "0.7.1"
+version = "0.8.2"
 description = "A Python Parser"
 category = "main"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+python-versions = ">=3.6"
 
 [package.extras]
-testing = ["docopt", "pytest (>=3.0.7)"]
+qa = ["flake8 (==3.8.3)", "mypy (==0.782)"]
+testing = ["docopt", "pytest (<6.0.0)"]
 
 [[package]]
 name = "pathspec"
 version = "0.8.1"
 description = "Utility library for gitignore style pattern matching of file paths."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
@@ -1121,17 +989,6 @@ description = "Python Imaging Library (Fork)"
 category = "main"
 optional = false
 python-versions = ">=3.6"
-
-[[package]]
-name = "pluggy"
-version = "0.13.1"
-description = "plugin and hook calling mechanisms for python"
-category = "dev"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-
-[package.extras]
-dev = ["pre-commit", "tox"]
 
 [[package]]
 name = "prometheus-client"
@@ -1226,55 +1083,6 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 six = ">=1.5"
 
 [[package]]
-name = "python-jsonrpc-server"
-version = "0.4.0"
-description = "JSON RPC 2.0 server library"
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-ujson = ">=3.0.0"
-
-[package.extras]
-test = ["versioneer", "pylint", "pycodestyle", "pyflakes", "pytest", "mock", "pytest-cov", "coverage"]
-
-[[package]]
-name = "python-language-server"
-version = "0.36.2+49.g3536061"
-description = "Python Language Server for the Language Server Protocol"
-category = "dev"
-optional = false
-python-versions = "*"
-develop = false
-
-[package.dependencies]
-docstring-to-markdown = "*"
-jedi = ">=0.17.2,<0.18.0"
-pluggy = "*"
-python-jsonrpc-server = ">=0.4.0"
-ujson = {version = ">=3.0.0", markers = "python_version > \"3\""}
-
-[package.extras]
-all = ["autopep8", "flake8 (>=3.8.0)", "mccabe (>=0.6.0,<0.7.0)", "pycodestyle (>=2.6.0,<2.7.0)", "pydocstyle (>=2.0.0)", "pyflakes (>=2.2.0,<2.3.0)", "pylint (>=2.5.0)", "rope (>=0.10.5)", "yapf"]
-autopep8 = ["autopep8"]
-flake8 = ["flake8 (>=3.8.0)"]
-mccabe = ["mccabe (>=0.6.0,<0.7.0)"]
-pycodestyle = ["pycodestyle (>=2.6.0,<2.7.0)"]
-pydocstyle = ["pydocstyle (>=2.0.0)"]
-pyflakes = ["pyflakes (>=2.2.0,<2.3.0)"]
-pylint = ["pylint (>=2.5.0)"]
-rope = ["rope (>0.10.5)"]
-test = ["versioneer", "pylint (>=2.5.0)", "pytest", "mock", "pytest-cov", "coverage", "numpy (<1.20)", "pandas", "matplotlib", "flaky", "pyqt5"]
-yapf = ["yapf"]
-
-[package.source]
-type = "git"
-url = "https://github.com/krassowski/python-language-server.git"
-reference = "main"
-resolved_reference = "3536061e43ff9486d6a7d6df7f91d10acb3920e8"
-
-[[package]]
 name = "pythreejs"
 version = "2.3.0"
 description = "Interactive 3D graphics for the Jupyter Notebook and JupyterLab, using Three.js and Jupyter Widgets."
@@ -1332,7 +1140,7 @@ py = {version = "*", markers = "implementation_name == \"pypy\""}
 name = "regex"
 version = "2021.4.4"
 description = "Alternative regular expression module, to replace re."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -1385,7 +1193,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 name = "sniffio"
 version = "1.2.0"
 description = "Sniff out which async library your code is running under"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -1420,7 +1228,7 @@ test = ["pytest", "pathlib2"]
 name = "toml"
 version = "0.10.2"
 description = "Python Library for Tom's Obvious, Minimal Language"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
@@ -1461,14 +1269,6 @@ traitlets = ">=4.2.2"
 test = ["numpy", "pandas", "xarray", "pytest"]
 
 [[package]]
-name = "typing-extensions"
-version = "3.10.0.0"
-description = "Backported and Experimental Type Hints for Python 3.5+"
-category = "dev"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "uhi"
 version = "0.2.1"
 description = "Unified Histogram Interface: tools to help library authors work with histograms"
@@ -1482,14 +1282,6 @@ numpy = ">=1.13.3"
 [package.extras]
 test = ["boost-histogram (>=1.0.0,<1.1.0)", "importlib_metadata (>=1.0)", "pytest (>=5.2)"]
 docs = ["sphinx (>=3.0,<4.0)", "sphinx_book_theme (>=0.0.40)", "sphinx_copybutton (>=0.3.1)"]
-
-[[package]]
-name = "ujson"
-version = "4.0.2"
-description = "Ultra fast JSON encoder and decoder for Python"
-category = "dev"
-optional = false
-python-versions = ">=3.6"
 
 [[package]]
 name = "uproot"
@@ -1558,7 +1350,7 @@ python-versions = "*"
 name = "websocket-client"
 version = "1.0.0"
 description = "WebSocket client for Python with low level API options"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -1576,12 +1368,12 @@ notebook = ">=4.4.1"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9, <3.10"
-content-hash = "0ce23cb2b8433b8d07f935a58e90e10ebe5c9eca1b6a7850e338ecbb9140f695"
+content-hash = "e4dae7fae53122dcee38fbad81950306fadc846a6b1fbc4ae5b1e4c8b4979f24"
 
 [metadata.files]
 anyio = [
-    {file = "anyio-3.0.1-py3-none-any.whl", hash = "sha256:ed71f7542ef39875b65def219794d9dcb0a48c571317b13612c12b1f292701b5"},
-    {file = "anyio-3.0.1.tar.gz", hash = "sha256:1ef7622396ab55829d4236a6f75e2199df6d26a4ba79bea0cb942a5fd2f79a23"},
+    {file = "anyio-3.1.0-py3-none-any.whl", hash = "sha256:5e335cef65fbd1a422bbfbb4722e8e9a9fadbd8c06d5afe9cd614d12023f6e5a"},
+    {file = "anyio-3.1.0.tar.gz", hash = "sha256:43e20711a9d003d858d694c12356dc44ab82c03ccc5290313c3392fa349dad0e"},
 ]
 appdirs = [
     {file = "appdirs-1.4.4-py2.py3-none-any.whl", hash = "sha256:a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"},
@@ -1757,8 +1549,8 @@ chardet = [
     {file = "chardet-4.0.0.tar.gz", hash = "sha256:0d6f53a15db4120f2b08c94f11e7d93d2c911ee118b6b30a04ec3ee8310179fa"},
 ]
 click = [
-    {file = "click-8.0.0-py3-none-any.whl", hash = "sha256:e90e62ced43dc8105fb9a26d62f0d9340b5c8db053a814e25d95c19873ae87db"},
-    {file = "click-8.0.0.tar.gz", hash = "sha256:7d8c289ee437bcb0316820ccee14aefcb056e58d31830ecab8e47eda6540e136"},
+    {file = "click-8.0.1-py3-none-any.whl", hash = "sha256:fba402a4a47334742d782209a7c79bc448911afe1149d07bdabdf480b3e2f4b6"},
+    {file = "click-8.0.1.tar.gz", hash = "sha256:8c04c11192119b1ef78ea049e0a6f0463e4c48ef00a30160c704337586f3ad7a"},
 ]
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
@@ -1766,23 +1558,6 @@ colorama = [
 ]
 construct = [
     {file = "construct-2.10.67.tar.gz", hash = "sha256:730235fedf4f2fee5cfadda1d14b83ef1bf23790fb1cc579073e10f70a050883"},
-]
-cppyy = [
-    {file = "cppyy-2.0.0.tar.gz", hash = "sha256:e528c955895710e733de9cfcc91b462ad66f594ff84ecc7ed3af09f239711e0e"},
-]
-cppyy-backend = [
-    {file = "cppyy-backend-1.14.5.tar.gz", hash = "sha256:eee51fe76cad634459abeb9391cc06e076e375a7d2372c0e7ddea9c69973dfd6"},
-]
-cppyy-cling = [
-    {file = "cppyy-cling-6.25.0.tar.gz", hash = "sha256:377043089f449ba695c93fb698272424833f5d7e3aabfc2c1d99c1ad00f191ee"},
-    {file = "cppyy_cling-6.25.0-py2.py3-none-macosx_10_12_x86_64.whl", hash = "sha256:e9e527ea33712a9ea0d681330911120ad7f8a17c2eb442aa0e97114b96748407"},
-    {file = "cppyy_cling-6.25.0-py2.py3-none-manylinux1_x86_64.whl", hash = "sha256:fc475adbdf8c889a258c519f356540ad923e5361a18e4ccb2670be0cfaddfe1b"},
-    {file = "cppyy_cling-6.25.0-py2.py3-none-manylinux2014_x86_64.whl", hash = "sha256:b8e47d5f3f132c0a21531c6b9241d1a997aab522923a14322261567ba1767a38"},
-    {file = "cppyy_cling-6.25.0-py2.py3-none-win32.whl", hash = "sha256:e199bf3219ba6457448fd03d197df3eef769d4351b478ea152fd0ab60d669bbf"},
-    {file = "cppyy_cling-6.25.0-py2.py3-none-win_amd64.whl", hash = "sha256:0bbfaed352e57fb311df1e1817b75e95f271593703f2ead912e298c5e5bdbc22"},
-]
-cpycppyy = [
-    {file = "CPyCppyy-1.12.6.tar.gz", hash = "sha256:e68c52f6078b8f8a19a307ef4bd6b602ada5ae82b23967f6c7f7da59dc7ecefa"},
 ]
 cycler = [
     {file = "cycler-0.10.0-py2.py3-none-any.whl", hash = "sha256:1d8a5ae1ff6c5cf9b93e8811e581232ad8920aeec647c37316ceac982b08cb2d"},
@@ -1796,17 +1571,9 @@ defusedxml = [
     {file = "defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61"},
     {file = "defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"},
 ]
-docstring-to-markdown = [
-    {file = "docstring-to-markdown-0.9.tar.gz", hash = "sha256:0b810e6e16737d2d0ede6182f66f513f814a11fad1222e645fbc14acde78e171"},
-    {file = "docstring_to_markdown-0.9-py3-none-any.whl", hash = "sha256:488b9f26339651edc7fc9386caeffd3924569072a8b67b727e253f83d5b18c59"},
-]
 entrypoints = [
     {file = "entrypoints-0.3-py2.py3-none-any.whl", hash = "sha256:589f874b313739ad35be6e0cd7efde2a4e9b6fea91edcc34e58ecbb8dbe56d19"},
     {file = "entrypoints-0.3.tar.gz", hash = "sha256:c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451"},
-]
-fastjsonschema = [
-    {file = "fastjsonschema-2.15.1-py3-none-any.whl", hash = "sha256:fa2f4bb1e31419c5eb1150f2e0545921712c10c34165b86d33f08f5562ad4b85"},
-    {file = "fastjsonschema-2.15.1.tar.gz", hash = "sha256:671f36d225b3493629b5e789428660109528f373cf4b8a22bac6fa2f8191c2d2"},
 ]
 hist = [
     {file = "hist-2.3.0-py3-none-any.whl", hash = "sha256:137ebac13210c9e3da16e2d76615199c9864daaa5f30fd5f046099868d9cd21f"},
@@ -1857,16 +1624,12 @@ isort = [
     {file = "isort-5.8.0.tar.gz", hash = "sha256:0a943902919f65c5684ac4e0154b1ad4fac6dcaa5d9f3426b732f1c8b5419be6"},
 ]
 jedi = [
-    {file = "jedi-0.17.2-py2.py3-none-any.whl", hash = "sha256:98cc583fa0f2f8304968199b01b6b4b94f469a1f4a74c1560506ca2a211378b5"},
-    {file = "jedi-0.17.2.tar.gz", hash = "sha256:86ed7d9b750603e4ba582ea8edc678657fb4007894a12bcf6f4bb97892f31d20"},
+    {file = "jedi-0.18.0-py2.py3-none-any.whl", hash = "sha256:18456d83f65f400ab0c2d3319e48520420ef43b23a086fdc05dff34132f0fb93"},
+    {file = "jedi-0.18.0.tar.gz", hash = "sha256:92550a404bad8afed881a137ec9a461fed49eca661414be45059329614ed0707"},
 ]
 jinja2 = [
     {file = "Jinja2-3.0.1-py3-none-any.whl", hash = "sha256:1f06f2da51e7b56b8f238affdd6b4e2c61e39598a378cc49345bc1bd42a978a4"},
     {file = "Jinja2-3.0.1.tar.gz", hash = "sha256:703f484b47a6af502e743c9122595cc812b0271f661722403114f71a79d0f5a4"},
-]
-jlab-enhanced-cell-toolbar = [
-    {file = "jlab-enhanced-cell-toolbar-3.3.0.tar.gz", hash = "sha256:634517723bc10c7d7f4a6716ffc0a816c43f69f10c9fb759ff60a7b904c37cd5"},
-    {file = "jlab_enhanced_cell_toolbar-3.3.0-py3-none-any.whl", hash = "sha256:2b5fa6c30e4533cabbce447149ccb4e7ba38c436206508a7476237b0fd857b5f"},
 ]
 json5 = [
     {file = "json5-0.9.5-py2.py3-none-any.whl", hash = "sha256:af1a1b9a2850c7f62c23fde18be4749b3599fd302f494eebf957e2ada6b9e42c"},
@@ -1884,10 +1647,6 @@ jupyter-core = [
     {file = "jupyter_core-4.7.1-py3-none-any.whl", hash = "sha256:8c6c0cac5c1b563622ad49321d5ec47017bd18b94facb381c6973a0486395f8e"},
     {file = "jupyter_core-4.7.1.tar.gz", hash = "sha256:79025cb3225efcd36847d0840f3fc672c0abd7afd0de83ba8a1d3837619122b4"},
 ]
-jupyter-lsp = [
-    {file = "jupyter-lsp-1.2.0.tar.gz", hash = "sha256:0f1e25a2f8b598b53ada5e9fcffc7659c2a3cf448f9640997abc2fc5d4735b2a"},
-    {file = "jupyter_lsp-1.2.0-py3-none-any.whl", hash = "sha256:52412c37105332a674056e85838b27c93999ff7a1936db915b6a2721e05b65d6"},
-]
 jupyter-server = [
     {file = "jupyter_server-1.7.0-py3-none-any.whl", hash = "sha256:f7c0d2583d943c25f9893c91c9315b270582c249e2e08ef78fed9a438aa7a375"},
     {file = "jupyter_server-1.7.0.tar.gz", hash = "sha256:d9cfc1d21ff9951f185d9cbf9b742b911f57b98887ed79e210acd6f720505576"},
@@ -1899,10 +1658,6 @@ jupyterlab = [
 jupyterlab-code-formatter = [
     {file = "jupyterlab_code_formatter-1.4.10-py3-none-any.whl", hash = "sha256:10a7f2ab44a4539a44ec6bf3fc3b27e7ed22c7ab975e6503823e21d7e60abae7"},
     {file = "jupyterlab_code_formatter-1.4.10.tar.gz", hash = "sha256:1645fd80b99d590d60fe0f3c078c9101ad62dfdbfac5e78b4c2d334896ab526f"},
-]
-jupyterlab-lsp = [
-    {file = "jupyterlab-lsp-3.6.0.tar.gz", hash = "sha256:f1f03b4e1072920ac951dbd9b0b6db60b23a1585317698c09b3a1fff35281292"},
-    {file = "jupyterlab_lsp-3.6.0-py3-none-any.whl", hash = "sha256:f7b0cce924c720d8e39212f42bc7c727907d94c9179b981a644d8f84c7d551b9"},
 ]
 jupyterlab-markup = [
     {file = "jupyterlab_markup-1.0.0-py3-none-any.whl", hash = "sha256:ed8eea1af29d2e62d99c5da87098636f436c84299e491e1d89b8a04463f2e552"},
@@ -1953,21 +1708,6 @@ kiwisolver = [
     {file = "kiwisolver-1.3.1-pp36-pypy36_pp73-manylinux2010_x86_64.whl", hash = "sha256:33449715e0101e4d34f64990352bce4095c8bf13bed1b390773fc0a7295967b3"},
     {file = "kiwisolver-1.3.1-pp36-pypy36_pp73-win32.whl", hash = "sha256:401a2e9afa8588589775fe34fc22d918ae839aaaf0c0e96441c0fdbce6d8ebe6"},
     {file = "kiwisolver-1.3.1.tar.gz", hash = "sha256:950a199911a8d94683a6b10321f9345d5a3a8433ec58b217ace979e18f16e248"},
-]
-line-profiler = [
-    {file = "line_profiler-3.2.6-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:1bab74bb0943167ab4d3e75918fa57c57f8327d9c7955bec4d425e0578dfbc7c"},
-    {file = "line_profiler-3.2.6-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:27ec2092d19b94f36d4249806e2200647de2e22af8ac653f1c6a82075ee879cf"},
-    {file = "line_profiler-3.2.6-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:0365a1800980a53f9633453eae73a8bb7565f25443b0196acdf5144d2523301f"},
-    {file = "line_profiler-3.2.6-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:9454302cd20ed76d4f76081d35652df993f41f1d0a0f5765cb2ffe4198bced45"},
-    {file = "line_profiler-3.2.6-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:2511f25d26272749d3baa523f669a809e22a0ee6cca0f2b1dd37d36115b73e81"},
-    {file = "line_profiler-3.2.6-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:0e86f91b63629fa594cc9eed6d36625c9beb16a92cee7b55bf8fbc0657ebde3d"},
-    {file = "line_profiler-3.2.6-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:3f96ca5802eb144c1dd7857da1b2a06df4398d1a9f2a212c2f50edf8e5f00abc"},
-    {file = "line_profiler-3.2.6-cp39-cp39-manylinux2010_x86_64.whl", hash = "sha256:4915a2731c95e584788513d340497f79a4e3a22ef78ecedb60816a71dc39529a"},
-    {file = "line_profiler-3.2.6.tar.gz", hash = "sha256:dbc831754699ef6a3ae16a38c79f87823380770cd41a6e4c02345be5a5ea4a0d"},
-]
-literary = [
-    {file = "literary-2.0.1-py3-none-any.whl", hash = "sha256:c19d68c2e417f2bd8ba01e5bc0fc548376f14d4cb83c51a1d9c669a658340233"},
-    {file = "literary-2.0.1.tar.gz", hash = "sha256:994b788359a85aecd1bae7bfe2e0895b8e044e107db82690f6503c2eb5deb975"},
 ]
 llvmlite = [
     {file = "llvmlite-0.36.0-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:cc0f9b9644b4ab0e4a5edb17f1531d791630c88858220d3cc688d6edf10da100"},
@@ -2172,8 +1912,8 @@ pandocfilters = [
     {file = "pandocfilters-1.4.3.tar.gz", hash = "sha256:bc63fbb50534b4b1f8ebe1860889289e8af94a23bff7445259592df25a3906eb"},
 ]
 parso = [
-    {file = "parso-0.7.1-py2.py3-none-any.whl", hash = "sha256:97218d9159b2520ff45eb78028ba8b50d2bc61dcc062a9682666f2dc4bd331ea"},
-    {file = "parso-0.7.1.tar.gz", hash = "sha256:caba44724b994a8a5e086460bb212abc5a8bc46951bf4a9a1210745953622eb9"},
+    {file = "parso-0.8.2-py2.py3-none-any.whl", hash = "sha256:a8c4922db71e4fdb90e0d0bc6e50f9b273d3397925e5e60a717e719201778d22"},
+    {file = "parso-0.8.2.tar.gz", hash = "sha256:12b83492c6239ce32ff5eed6d3639d6a536170723c6f3f1506869f1ace413398"},
 ]
 pathspec = [
     {file = "pathspec-0.8.1-py2.py3-none-any.whl", hash = "sha256:aa0cb481c4041bf52ffa7b0d8fa6cd3e88a2ca4879c533c9153882ee2556790d"},
@@ -2222,10 +1962,6 @@ pillow = [
     {file = "Pillow-8.2.0-pp37-pypy37_pp73-win32.whl", hash = "sha256:e98eca29a05913e82177b3ba3d198b1728e164869c613d76d0de4bde6768a50e"},
     {file = "Pillow-8.2.0.tar.gz", hash = "sha256:a787ab10d7bb5494e5f76536ac460741788f1fbce851068d73a87ca7c35fc3e1"},
 ]
-pluggy = [
-    {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
-    {file = "pluggy-0.13.1.tar.gz", hash = "sha256:15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"},
-]
 prometheus-client = [
     {file = "prometheus_client-0.10.1-py2.py3-none-any.whl", hash = "sha256:030e4f9df5f53db2292eec37c6255957eb76168c6f974e4176c711cf91ed34aa"},
     {file = "prometheus_client-0.10.1.tar.gz", hash = "sha256:b6c5a9643e3545bcbfd9451766cbaa5d9c67e7303c7bc32c750b6fa70ecb107d"},
@@ -2265,11 +2001,6 @@ python-dateutil = [
     {file = "python-dateutil-2.8.1.tar.gz", hash = "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"},
     {file = "python_dateutil-2.8.1-py2.py3-none-any.whl", hash = "sha256:75bb3f31ea686f1197762692a9ee6a7550b59fc6ca3a1f4b5d7e32fb98e2da2a"},
 ]
-python-jsonrpc-server = [
-    {file = "python-jsonrpc-server-0.4.0.tar.gz", hash = "sha256:62c543e541f101ec5b57dc654efc212d2c2e3ea47ff6f54b2e7dcb36ecf20595"},
-    {file = "python_jsonrpc_server-0.4.0-py3-none-any.whl", hash = "sha256:e5a908ff182e620aac07db5f57887eeb0afe33993008f57dc1b85b594cea250c"},
-]
-python-language-server = []
 pythreejs = [
     {file = "pythreejs-2.3.0-py2.py3-none-any.whl", hash = "sha256:d638f600d9a7322198caaad0c4d77d89b85e4272e0d340a6c0a3f3ceaf385ed4"},
     {file = "pythreejs-2.3.0.tar.gz", hash = "sha256:231b7fced2485fa0945e01e4dd11fbb92d4aef74376a5ebe6e7c400dcc4e3c25"},
@@ -2474,37 +2205,9 @@ traittypes = [
     {file = "traittypes-0.2.1-py2.py3-none-any.whl", hash = "sha256:1340af133810b6eee1a2eb2e988f862b0d12b6c2d16f282aaf3207b782134c2e"},
     {file = "traittypes-0.2.1.tar.gz", hash = "sha256:be6fa26294733e7489822ded4ae25da5b4824a8a7a0e0c2dccfde596e3489bd6"},
 ]
-typing-extensions = [
-    {file = "typing_extensions-3.10.0.0-py2-none-any.whl", hash = "sha256:0ac0f89795dd19de6b97debb0c6af1c70987fd80a2d62d1958f7e56fcc31b497"},
-    {file = "typing_extensions-3.10.0.0-py3-none-any.whl", hash = "sha256:779383f6086d90c99ae41cf0ff39aac8a7937a9283ce0a414e5dd782f4c94a84"},
-    {file = "typing_extensions-3.10.0.0.tar.gz", hash = "sha256:50b6f157849174217d0656f99dc82fe932884fb250826c18350e159ec6cdf342"},
-]
 uhi = [
     {file = "uhi-0.2.1-py3-none-any.whl", hash = "sha256:387f66cd0e89fdc3105fa15e96eddea16fe062dcd8b33b5c1e4971c966f9efe5"},
     {file = "uhi-0.2.1.tar.gz", hash = "sha256:97fdf50ac0fefd954b74697a19b04e2ca8b9303a825f5294d31338316ce5ab52"},
-]
-ujson = [
-    {file = "ujson-4.0.2-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:e390df0dcc7897ffb98e17eae1f4c442c39c91814c298ad84d935a3c5c7a32fa"},
-    {file = "ujson-4.0.2-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:84b1dca0d53b0a8d58835f72ea2894e4d6cf7a5dd8f520ab4cbd698c81e49737"},
-    {file = "ujson-4.0.2-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:91396a585ba51f84dc71c8da60cdc86de6b60ba0272c389b6482020a1fac9394"},
-    {file = "ujson-4.0.2-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:eb6b25a7670c7537a5998e695fa62ff13c7f9c33faf82927adf4daa460d5f62e"},
-    {file = "ujson-4.0.2-cp36-cp36m-win_amd64.whl", hash = "sha256:f8aded54c2bc554ce20b397f72101737dd61ee7b81c771684a7dd7805e6cca0c"},
-    {file = "ujson-4.0.2-cp37-cp37m-macosx_10_14_x86_64.whl", hash = "sha256:30962467c36ff6de6161d784cd2a6aac1097f0128b522d6e9291678e34fb2b47"},
-    {file = "ujson-4.0.2-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:fc51e545d65689c398161f07fd405104956ec27f22453de85898fa088b2cd4bb"},
-    {file = "ujson-4.0.2-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:e6e90330670c78e727d6637bb5a215d3e093d8e3570d439fd4922942f88da361"},
-    {file = "ujson-4.0.2-cp37-cp37m-manylinux2014_aarch64.whl", hash = "sha256:5e1636b94c7f1f59a8ead4c8a7bab1b12cc52d4c21ababa295ffec56b445fd2a"},
-    {file = "ujson-4.0.2-cp37-cp37m-win_amd64.whl", hash = "sha256:e2cadeb0ddc98e3963bea266cc5b884e5d77d73adf807f0bda9eca64d1c509d5"},
-    {file = "ujson-4.0.2-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:a214ba5a21dad71a43c0f5aef917cd56a2d70bc974d845be211c66b6742a471c"},
-    {file = "ujson-4.0.2-cp38-cp38-manylinux1_i686.whl", hash = "sha256:0190d26c0e990c17ad072ec8593647218fe1c675d11089cd3d1440175b568967"},
-    {file = "ujson-4.0.2-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:f273a875c0b42c2a019c337631bc1907f6fdfbc84210cc0d1fff0e2019bbfaec"},
-    {file = "ujson-4.0.2-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:d3a87888c40b5bfcf69b4030427cd666893e826e82cc8608d1ba8b4b5e04ea99"},
-    {file = "ujson-4.0.2-cp38-cp38-win_amd64.whl", hash = "sha256:7333e8bc45ea28c74ae26157eacaed5e5629dbada32e0103c23eb368f93af108"},
-    {file = "ujson-4.0.2-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:b3a6dcc660220539aa718bcc9dbd6dedf2a01d19c875d1033f028f212e36d6bb"},
-    {file = "ujson-4.0.2-cp39-cp39-manylinux1_i686.whl", hash = "sha256:0ea07fe57f9157118ca689e7f6db72759395b99121c0ff038d2e38649c626fb1"},
-    {file = "ujson-4.0.2-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:4d6d061563470cac889c0a9fd367013a5dbd8efc36ad01ab3e67a57e56cad720"},
-    {file = "ujson-4.0.2-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:b5c70704962cf93ec6ea3271a47d952b75ae1980d6c56b8496cec2a722075939"},
-    {file = "ujson-4.0.2-cp39-cp39-win_amd64.whl", hash = "sha256:aad6d92f4d71e37ea70e966500f1951ecd065edca3a70d3861b37b176dd6702c"},
-    {file = "ujson-4.0.2.tar.gz", hash = "sha256:c615a9e9e378a7383b756b7e7a73c38b22aeb8967a8bfbffd4741f7ffd043c4d"},
 ]
 uproot = [
     {file = "uproot-4.0.7-py2.py3-none-any.whl", hash = "sha256:7fbe065eb75f271819542df691499518ecc56caaa8e0166876d3d13be5bf08b3"},
