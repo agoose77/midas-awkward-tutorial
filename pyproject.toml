@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "midas-awkward"
+version = "0.1.0"
+description = ""
+authors = ["Angus Hollands <goosey15@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9, <3.10"
+awkward = "^1.2.3"
+uproot = "^4.0.7"
+numpy = "^1.20.3"
+matplotlib = "^3.4.2"
+hist = "^2.3.0"
+mplhep = "^0.3.6"
+numba = "^0.53.1"
+pybind11 = "^2.6.2"
+construct = "^2.10.67"
+scipy = "^1.6.3"
+vector = "^0.8.1"
+ipympl = "^0.7.0"
+ipyvolume = {version = "0.6.0a8", allow-prereleases = true}
+midas-tape = "^0.1.0"
+jupyterlab = "^3.0.16"
+jupyterlab-markup = "^1.0.0"
+black = "^21.5b1"
+isort = "^5.8.0"
+jupyterlab-code-formatter = "^1.4.10"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
