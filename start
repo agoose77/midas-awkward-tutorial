@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+echo "${@}"
+exec jupyter lab --no-browser "${@:3}"
