@@ -25,6 +25,8 @@ jupyterlab-markup = "^1.0.0"
 black = "^21.5b1"
 isort = "^5.8.0"
 jupyterlab-code-formatter = "^1.4.10"
+cryptography = "^3.4.7"
+jupyter-server-parameters = "^0.1.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
