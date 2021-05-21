@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -eu
+
+cat .jupyter-config/jupyter_server_config.py >> $HOME/.jupyter/jupyter_server_config.py
